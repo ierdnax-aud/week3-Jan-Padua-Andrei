@@ -53,9 +53,9 @@ export function Navigation() {
             
             {/* Logout Button (Desktop) */}
             <SignOutButton redirectUrl="/sign-in">
-              <button className="hidden md:flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all hover:shadow-lg">
+              <button className="hidden md:flex items-center gap-2 bg-slate-800 hover:bg-slate-900 text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-all hover:shadow-lg">
                 <LogOut className="w-4 h-4" />
-                LOGOUT
+                Logout
               </button>
             </SignOutButton>
 
