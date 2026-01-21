@@ -18,7 +18,7 @@ export function Timeline({ items }: TimelineProps) {
   return (
     <div className="relative">
       {/* Timeline Line */}
-      <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200" />
+      <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-200 via-gray-400 to-gray-200" />
 
       {/* Timeline Items */}
       <div className="space-y-8">
@@ -27,16 +27,16 @@ export function Timeline({ items }: TimelineProps) {
             {/* Timeline Dot */}
             <div className={`absolute left-0 w-8 h-8 rounded-full flex items-center justify-center ${
               item.status === 'current'
-                ? 'bg-blue-600 ring-4 ring-blue-100'
-                : 'bg-white border-2 border-blue-400'
+                ? 'bg-slate-900 ring-4 ring-gray-200'
+                : 'bg-white border-2 border-gray-400'
             }`}>
-              {item.status === 'completed' && <CheckCircle2 className="w-5 h-5 text-blue-600" />}
+              {item.status === 'completed' && <CheckCircle2 className="w-5 h-5 text-slate-900" />}
               {item.status === 'current' && <div className="w-3 h-3 bg-white rounded-full animate-pulse" />}
             </div>
 
             {/* Content Card */}
             <div className={`card-hover bg-white/80 backdrop-blur-sm border-l-4 rounded-lg p-6 shadow-md ${
-              item.status === 'current' ? 'border-blue-600' : 'border-gray-300'
+              item.status === 'current' ? 'border-slate-900' : 'border-gray-300'
             }`}>
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1">
@@ -45,7 +45,7 @@ export function Timeline({ items }: TimelineProps) {
                 </div>
                 <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
                   item.status === 'current'
-                    ? 'bg-blue-100 text-blue-700'
+                    ? 'bg-gray-100 text-slate-900'
                     : 'bg-gray-100 text-gray-700'
                 }`}>
                   {item.year}

@@ -37,7 +37,7 @@ export default function Education() {
       <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-12 md:py-16 relative z-10">
         <div className="mb-12 animate-fadeIn">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 flex items-center gap-3">
-            <BookOpen className="w-10 h-10 text-blue-600" />
+            <BookOpen className="w-10 h-10 text-slate-900" />
             Education
           </h1>
           <p className="text-gray-600 mt-3 text-lg">My academic journey</p>
@@ -52,11 +52,11 @@ export default function Education() {
         <section className="mt-12 pt-8 border-t border-gray-200 animate-fadeIn" style={{ animationDelay: '200ms' }}>
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Academic Achievements</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="glassmorphism rounded-xl p-6 card-hover border-l-4 border-blue-600">
+            <div className="glassmorphism rounded-xl p-6 card-hover border-l-4 border-slate-900">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">President's List</h3>
               <p className="text-sm text-gray-700">Certificate of Academic Excellence for outstanding academic performance</p>
             </div>
-            <div className="glassmorphism rounded-xl p-6 card-hover border-l-4 border-indigo-600">
+            <div className="glassmorphism rounded-xl p-6 card-hover border-l-4 border-gray-600">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Technical Focus</h3>
               <p className="text-sm text-gray-700">Specializing in <HoverLink text="AI" />, <HoverLink text="Web Development" />, and emerging technologies</p>
             </div>
@@ -75,7 +75,7 @@ export default function Education() {
               'Problem-solving and analytical thinking'
             ].map((skill, index) => (
               <li key={index} className="flex gap-3 items-start text-gray-700">
-                <span className="text-blue-600 font-bold text-xl">•</span>
+                <span className="text-slate-900 font-bold text-xl">•</span>
                 <span>{skill}</span>
               </li>
             ))}
