@@ -1,10 +1,15 @@
+import { auth } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
 import { Navigation } from '@/components/navigation'
 import { Shield, AlertTriangle, Activity, Lock, FileText, CheckCircle2, XCircle, Clock, TrendingUp, TrendingDown, LogOut } from 'lucide-react'
 import { ModernBackground } from '@/components/modern-background'
 import { attackVectors, riskAssessment, remediationBacklog, incidentResponseChecklist } from '@/lib/security'
 import { UserButton } from '@clerk/nextjs'
 
-export default function SecurityDashboard() {
+export default async function SecurityDashboard() {
+  const { userId } = await auth()
+  if (!userId) redirect('/sign-in')
+  
   return (
     <div className="min-h-screen bg-white flex flex-col relative">
       <Navigation />

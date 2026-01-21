@@ -1,8 +1,13 @@
+import { auth } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
 import { Navigation } from '@/components/navigation'
 import { HoverLink } from '@/components/hover-link'
 import { ModernBackground } from '@/components/modern-background'
 
-export default function About() {
+export default async function About() {
+  const { userId } = await auth()
+  if (!userId) redirect('/sign-in')
+  
   return (
     <div className="min-h-screen bg-white flex flex-col relative">
       <ModernBackground />

@@ -1,9 +1,17 @@
+import { auth } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
 import { Mail, Code2, Award, BookOpen } from 'lucide-react'
 import { Navigation } from '@/components/navigation'
 import { HoverLink } from '@/components/hover-link'
 import { ModernBackground } from '@/components/modern-background'
 
-export default function Home() {
+export default async function Home() {
+  const { userId } = await auth()
+  
+  if (!userId) {
+    redirect('/sign-in')
+  }
+
   return (
     <div className="min-h-screen bg-white flex flex-col relative">
       <ModernBackground />
