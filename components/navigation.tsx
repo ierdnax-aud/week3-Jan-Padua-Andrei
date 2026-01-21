@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { UserButton } from '@clerk/nextjs'
+import { UserButton, SignOutButton } from '@clerk/nextjs'
+import { LogOut } from 'lucide-react'
 
 export function Navigation() {
   const pathname = usePathname()
@@ -46,17 +47,13 @@ export function Navigation() {
                 )
               })}
             </nav>
-            {/* LOGOUT BUTTON - VISIBLE ON ALL PAGES */}
-            <div className="flex items-center bg-white rounded-full shadow-md border border-gray-200 p-1">
-              <UserButton 
-                afterSignOutUrl="/sign-in"
-                appearance={{
-                  elements: {
-                    avatarBox: "w-9 h-9"
-                  }
-                }}
-              />
-            </div>
+            {/* BIG VISIBLE LOGOUT BUTTON */}
+            <SignOutButton redirectUrl="/sign-in">
+              <button className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors shadow-md">
+                <LogOut className="w-4 h-4" />
+                LOGOUT
+              </button>
+            </SignOutButton>
           </div>
         </div>
       </div>
