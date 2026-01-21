@@ -2,15 +2,28 @@
 
 export function ModernBackground() {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-white">
-      {/* Soft gradient accent top-right */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-slate-100 to-slate-50 rounded-full opacity-60 blur-3xl" />
+    <>
+      {/* Gradient Base with Soft Colors */}
+      <div className="fixed inset-0 -z-20 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
+      
+      {/* Animated Blur Orbs (Modern, Minimalist) */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div 
+          className="absolute top-0 -left-4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+          style={{ animation: 'blob 7s infinite' }}
+        />
+        <div 
+          className="absolute top-0 -right-4 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15"
+          style={{ animation: 'blob 7s infinite 2s' }}
+        />
+        <div 
+          className="absolute -bottom-8 left-20 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+          style={{ animation: 'blob 7s infinite 4s' }}
+        />
+      </div>
 
-      {/* Soft gradient accent bottom-left */}
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-gray-100 to-white rounded-full opacity-50 blur-3xl" />
-
-      {/* Subtle grid pattern */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.02]" xmlns="http://www.w3.org/2000/svg">
+      {/* Subtle grid pattern (very minimal) */}
+      <svg className="fixed inset-0 w-full h-full opacity-[0.015] -z-10" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
             <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
@@ -19,11 +32,23 @@ export function ModernBackground() {
         <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
 
-      {/* Accent line - horizontal */}
-      <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-40" />
-
-      {/* Accent line - vertical */}
-      <div className="absolute top-0 left-1/2 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-200 to-transparent opacity-30" />
-    </div>
+      {/* Add blob animation */}
+      <style jsx>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+      `}</style>
+    </>
   )
 }
