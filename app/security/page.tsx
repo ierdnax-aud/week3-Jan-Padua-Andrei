@@ -9,9 +9,16 @@ export default function SecurityDashboard() {
     <div className="min-h-screen bg-white flex flex-col relative">
       <Navigation />
       
-      {/* Logout Button */}
-      <div className="absolute top-6 right-6 z-50">
-        <UserButton afterSignOutUrl="/" />
+      {/* Logout Button - More Visible */}
+      <div className="absolute top-20 right-6 z-50 bg-white rounded-full shadow-lg p-1">
+        <UserButton 
+          afterSignOutUrl="/" 
+          appearance={{
+            elements: {
+              avatarBox: "w-10 h-10"
+            }
+          }}
+        />
       </div>
 
       <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10 md:py-12">
